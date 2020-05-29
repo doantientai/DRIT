@@ -13,17 +13,20 @@ class Dis_content(nn.Module):
     super(Dis_content, self).__init__()
     model = []
     model += [LeakyReLUConv2d(256, 256, kernel_size=7, stride=2, padding=1, norm='Instance')]
-    model += [LeakyReLUConv2d(256, 256, kernel_size=7, stride=2, padding=1, norm='Instance')]
-    model += [LeakyReLUConv2d(256, 256, kernel_size=7, stride=2, padding=1, norm='Instance')]
+    # model += [LeakyReLUConv2d(256, 256, kernel_size=7, stride=2, padding=1, norm='Instance')]
+    # model += [LeakyReLUConv2d(256, 256, kernel_size=7, stride=2, padding=1, norm='Instance')]
     model += [LeakyReLUConv2d(256, 256, kernel_size=4, stride=1, padding=0)]
+    model += [LeakyReLUConv2d(256, 256, kernel_size=3, stride=1, padding=0)]
     model += [nn.Conv2d(256, 1, kernel_size=1, stride=1, padding=0)]
     self.model = nn.Sequential(*model)
 
   def forward(self, x):
+    # print("Dis_content.x", x.shape)
     out = self.model(x)
+    # print("Dis_content.out", out.shape)
     out = out.view(-1)
-    outs = []
-    outs.append(out)
+    # print("Dis_content.out.view(-1)", out.shape)
+    outs = [out]
     return outs
 
 class MultiScaleDis(nn.Module):
@@ -121,10 +124,18 @@ class E_content(nn.Module):
     self.convB = nn.Sequential(*encB_c)
 
   def forward(self, xa, xb):
+    # print("xa", xa.shape)
+    # print("xb", xb.shape)
     outputA = self.convA(xa)
     outputB = self.convB(xb)
+    # print("convA(xa)", outputA.shape)
+    # print("convB(xb)", outputB.shape)
+    # exit()
+    ### this conv_share does not change sizes
     outputA = self.conv_share(outputA)
     outputB = self.conv_share(outputB)
+    # print("conv_share(outputA)", outputA.shape)
+    # print("conv_share(outputA)", outputB.shape)
     return outputA, outputB
 
   def forward_a(self, xa):

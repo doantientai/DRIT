@@ -203,10 +203,15 @@ class DRIT(nn.Module):
     self.real_B_encoded = self.input_B[0:half_size]
     # get encoded z_c
     self.z_content_a, self.z_content_b = self.enc_c.forward(self.real_A_encoded, self.real_B_encoded)
+    # print("self.z_content_a", self.z_content_a.shape)
+    # print("self.z_content_b", self.z_content_b.shape)
+    # exit()
 
   def update_D_content(self, image_a, image_b):
     self.input_A = image_a
     self.input_B = image_b
+    # print(image_a.shape)
+    # print(image_b.shape)
     self.forward_content()
     self.disContent_opt.zero_grad()
     loss_D_Content = self.backward_contentD(self.z_content_a, self.z_content_b)
@@ -272,8 +277,14 @@ class DRIT(nn.Module):
     return loss_D
 
   def backward_contentD(self, imageA, imageB):
+    # print("imageA", imageA.shape)
+    # print("imageB", imageB.shape)
     pred_fake = self.disContent.forward(imageA.detach())
     pred_real = self.disContent.forward(imageB.detach())
+    # print("pred_fake", pred_fake.shape)
+    # print("pred_real", pred_real.shape)
+    # exit()
+
     for it, (out_a, out_b) in enumerate(zip(pred_fake, pred_real)):
       out_fake = nn.functional.sigmoid(out_a)
       out_real = nn.functional.sigmoid(out_b)
