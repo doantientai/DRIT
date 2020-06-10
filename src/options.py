@@ -16,13 +16,14 @@ class TrainOptions():
     self.parser.add_argument('--no_flip', action='store_true', help='specified if no flipping')
 
     # ouptput related
-    self.parser.add_argument('--name', type=str, default='trial', help='folder name to save outputs')
+    # self.parser.add_argument('--name', type=str, default='trial', help='folder name to save outputs')
     self.parser.add_argument('--display_dir', type=str, default='../logs', help='path for saving display results')
     self.parser.add_argument('--result_dir', type=str, default='../results', help='path for saving result images and models')
-    self.parser.add_argument('--display_freq', type=int, default=1, help='freq (iteration) of display')
-    self.parser.add_argument('--img_save_freq', type=int, default=5, help='freq (epoch) of saving images')
-    self.parser.add_argument('--model_save_freq', type=int, default=10, help='freq (epoch) of saving models')
-    self.parser.add_argument('--no_display_img', action='store_true', help='specified if no dispaly')
+    self.parser.add_argument('--display_freq', type=int, default=50, help='freq (iteration) of display')
+    self.parser.add_argument('--img_save_freq', type=int, default=10, help='freq (epoch) of saving images')
+    self.parser.add_argument('--model_save_freq', type=int, default=100, help='freq (epoch) of saving models')
+    # self.parser.add_argument('--no_display_img', action='store_true', help='specified if no dispaly')
+    self.parser.add_argument('--no_display_img', default='true', help='specified if no display')
 
     # training related
     self.parser.add_argument('--no_ms', action='store_true', help='disable mode seeking regularization')
@@ -38,9 +39,18 @@ class TrainOptions():
     self.parser.add_argument('--gpu', type=int, default=0, help='gpu')
 
     ### debug: make it work with 64x64
-    self.parser.add_argument('--dataroot', type=str, default="/media/tai/6TB/Projects/SOTAsDemos/DRIT/DRIT/datasets/portrait")
+    # self.parser.add_argument('--dataroot', type=str, default="/media/tai/6TB/Projects/SOTAsDemos/DRIT/DRIT/datasets/portrait")
     self.parser.add_argument('--crop_size', type=int, default=64, help='cropped image size for training')
     self.parser.add_argument('--resize_size', type=int, default=64, help='resized image size for training')
+
+    # ### 001 portrait training
+    # self.parser.add_argument('--dataroot', type=str, default="/media/tai/6TB/Projects/SOTAsDemos/DRIT/DRIT/datasets/portrait")
+    # self.parser.add_argument('--name', type=str, default='001_portrait', help='folder name to save outputs')
+
+    ### 002_edges2handbags training
+    self.parser.add_argument('--dataroot', type=str, default="/media/tai/6TB/Projects/InfoMUNIT/Data/edges2handbags")
+    self.parser.add_argument('--name', type=str, default='002_edges2handbags', help='folder name to save outputs')
+
 
   def parse(self):
     self.opt = self.parser.parse_args()
