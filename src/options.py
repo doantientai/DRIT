@@ -65,25 +65,39 @@ class TestOptions():
     self.parser = argparse.ArgumentParser()
 
     # data loader related
-    self.parser.add_argument('--dataroot', type=str, required=True, help='path of data')
+#     self.parser.add_argument('--dataroot', type=str, required=True, help='path of data')
     self.parser.add_argument('--phase', type=str, default='test', help='phase for dataloading')
-    self.parser.add_argument('--resize_size', type=int, default=256, help='resized image size for training')
-    self.parser.add_argument('--crop_size', type=int, default=216, help='cropped image size for training')
+#     self.parser.add_argument('--resize_size', type=int, default=256, help='resized image size for training')
+#     self.parser.add_argument('--crop_size', type=int, default=216, help='cropped image size for training')
     self.parser.add_argument('--nThreads', type=int, default=4, help='for data loader')
     self.parser.add_argument('--input_dim_a', type=int, default=3, help='# of input channels for domain A')
     self.parser.add_argument('--input_dim_b', type=int, default=3, help='# of input channels for domain B')
-    self.parser.add_argument('--a2b', type=int, default=1, help='translation direction, 1 for a2b, 0 for b2a')
+#     self.parser.add_argument('--a2b', type=int, default=1, help='translation direction, 1 for a2b, 0 for b2a')
 
     # ouptput related
-    self.parser.add_argument('--num', type=int, default=5, help='number of outputs per image')
-    self.parser.add_argument('--name', type=str, default='trial', help='folder name to save outputs')
+#     self.parser.add_argument('--num', type=int, default=5, help='number of outputs per image')
+#     self.parser.add_argument('--name', type=str, default='trial', help='folder name to save outputs')
     self.parser.add_argument('--result_dir', type=str, default='../outputs', help='path for saving result images and models')
 
     # model related
     self.parser.add_argument('--concat', type=int, default=1, help='concatenate attribute features for translation, set 0 for using feature-wise transform')
     self.parser.add_argument('--no_ms', action='store_true', help='disable mode seeking regularization')
-    self.parser.add_argument('--resume', type=str, required=True, help='specified the dir of saved models for resume the training')
+#     self.parser.add_argument('--resume', type=str, required=True, help='specified the dir of saved models for resume the training')
     self.parser.add_argument('--gpu', type=int, default=0, help='gpu')
+    
+    ### make it work with 64x64
+    self.parser.add_argument('--crop_size', type=int, default=64, help='cropped image size for training')
+    self.parser.add_argument('--resize_size', type=int, default=64, help='resized image size for training')
+    
+    ### test 001_portrait
+    self.parser.add_argument('--dataroot', type=str, default="/home/jupyter/workdir/TaiDoan/Projects/InfoMUNIT_workshop/Data/portrait")
+    self.parser.add_argument('--num', type=int, default=100, help='number of outputs per image')
+    self.parser.add_argument('--name', type=str, default='001_portrait', help='folder name to save outputs')
+    self.parser.add_argument('--resume', type=str, default='/home/jupyter/workdir/TaiDoan/Projects/InfoMUNIT_workshop/SOTAs/DRIT/results/001_portrait/00399.pth')
+    self.parser.add_argument('--a2b', type=int, default=0, help='translation direction, 1 for a2b, 0 for b2a')
+
+
+
 
   def parse(self):
     self.opt = self.parser.parse_args()

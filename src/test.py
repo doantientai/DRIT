@@ -14,8 +14,10 @@ def main():
   print('\n--- load dataset ---')
   if opts.a2b:
     dataset = dataset_single(opts, 'A', opts.input_dim_a)
+    subdir = "a2b"
   else:
     dataset = dataset_single(opts, 'B', opts.input_dim_b)
+    subdir = "b2a"
   loader = torch.utils.data.DataLoader(dataset, batch_size=1, num_workers=opts.nThreads)
 
   # model
@@ -26,9 +28,9 @@ def main():
   model.eval()
 
   # directory
-  result_dir = os.path.join(opts.result_dir, opts.name)
+  result_dir = os.path.join(opts.result_dir, opts.name, subdir)
   if not os.path.exists(result_dir):
-    os.mkdir(result_dir)
+    os.makedirs(result_dir)
 
   # test
   print('\n--- testing ---')
