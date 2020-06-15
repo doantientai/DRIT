@@ -43,12 +43,12 @@ class TrainOptions():
     self.parser.add_argument('--crop_size', type=int, default=64, help='cropped image size for training')
     self.parser.add_argument('--resize_size', type=int, default=64, help='resized image size for training')
 
-    # ### 001 portrait training
-    # self.parser.add_argument('--dataroot', type=str, default="/media/tai/6TB/Projects/SOTAsDemos/DRIT/DRIT/datasets/portrait")
-    # self.parser.add_argument('--name', type=str, default='001_portrait', help='folder name to save outputs')
+#     ### 001 portrait training
+#     self.parser.add_argument('--dataroot', type=str, default="/home/jupyter/workdir/TaiDoan/Projects/InfoMUNIT_workshop/Data/portrait")
+#     self.parser.add_argument('--name', type=str, default='001_portrait', help='folder name to save outputs')
 
     ### 002_edges2handbags training
-    self.parser.add_argument('--dataroot', type=str, default="/media/tai/6TB/Projects/InfoMUNIT/Data/edges2handbags")
+    self.parser.add_argument('--dataroot', type=str, default="/home/jupyter/workdir/TaiDoan/Projects/InfoMUNIT_workshop/Data/edges2handbags")
     self.parser.add_argument('--name', type=str, default='002_edges2handbags', help='folder name to save outputs')
 
 
