@@ -90,11 +90,12 @@ class TestOptions():
     self.parser.add_argument('--resize_size', type=int, default=64, help='resized image size for training')
     
     ### test 001_portrait
-    self.parser.add_argument('--dataroot', type=str, default="/home/jupyter/workdir/TaiDoan/Projects/InfoMUNIT_workshop/Data/portrait")
+    # self.parser.add_argument('--dataroot', type=str, default="/home/jupyter/workdir/TaiDoan/Projects/InfoMUNIT_workshop/Data/portrait")
+    self.parser.add_argument('--dataroot', type=str, default="/media/tai/6TB/Projects/SOTAsDemos/DRIT/DRIT/datasets/portrait")
     self.parser.add_argument('--num', type=int, default=100, help='number of outputs per image')
     self.parser.add_argument('--name', type=str, default='001_portrait', help='folder name to save outputs')
-    self.parser.add_argument('--resume', type=str, default='/home/jupyter/workdir/TaiDoan/Projects/InfoMUNIT_workshop/SOTAs/DRIT/results/001_portrait/00399.pth')
-    self.parser.add_argument('--a2b', type=int, default=0, help='translation direction, 1 for a2b, 0 for b2a')
+    self.parser.add_argument('--resume', type=str, default='../results/001_portrait/00399.pth')
+    self.parser.add_argument('--a2b', type=int, default=1, help='translation direction, 1 for a2b, 0 for b2a')
 
 
 
