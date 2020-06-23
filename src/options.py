@@ -47,9 +47,25 @@ class TrainOptions():
 #     self.parser.add_argument('--dataroot', type=str, default="/home/jupyter/workdir/TaiDoan/Projects/InfoMUNIT_workshop/Data/portrait")
 #     self.parser.add_argument('--name', type=str, default='001_portrait', help='folder name to save outputs')
 
-    ### 002_edges2handbags training
-    self.parser.add_argument('--dataroot', type=str, default="/home/jupyter/workdir/TaiDoan/Projects/InfoMUNIT_workshop/Data/edges2handbags")
+#     ### 002_edges2handbags training
+#     self.parser.add_argument('--dataroot', type=str, default="/home/jupyter/workdir/TaiDoan/Projects/InfoMUNIT_workshop/Data/edges2handbags")
+#     self.parser.add_argument('--name', type=str, default='002_edges2handbags', help='folder name to save outputs')
+
+    ### 002_edges2handbags training [MegaDeep down, redo on Arobas]
+    self.parser.add_argument('--dataroot', type=str, default="/home/blaise/workdir/Tai/Projects/InfoMUNIT_workshop/Data/edges2handbags")
     self.parser.add_argument('--name', type=str, default='002_edges2handbags', help='folder name to save outputs')
+
+#     ### 003_edges2shoes training [CANCELED on MegaDeep to run on Arobas]
+#     self.parser.add_argument('--dataroot', type=str, default="/home/jupyter/workdir/TaiDoan/Projects/InfoMUNIT_workshop/Data/edges2shoes")
+#     self.parser.add_argument('--name', type=str, default='003_edges2shoes', help='folder name to save outputs')
+
+#     ### 003_edges2shoes training [on AROBAS]
+#     self.parser.add_argument('--dataroot', type=str, default="/home/blaise/workdir/Tai/Projects/InfoMUNIT_workshop/Data/edges2shoes")
+#     self.parser.add_argument('--name', type=str, default='003_edges2shoes', help='folder name to save outputs')
+
+#     ### 004_cat2dogDRIT training
+#     self.parser.add_argument('--dataroot', type=str, default="/home/blaise/workdir/Tai/Projects/InfoMUNIT_workshop/Data/cat2dog")
+#     self.parser.add_argument('--name', type=str, default='004_cat2dogDRIT', help='folder name to save outputs')
 
 
   def parse(self):
@@ -89,13 +105,35 @@ class TestOptions():
     self.parser.add_argument('--crop_size', type=int, default=64, help='cropped image size for training')
     self.parser.add_argument('--resize_size', type=int, default=64, help='resized image size for training')
     
-    ### test 001_portrait
-    # self.parser.add_argument('--dataroot', type=str, default="/home/jupyter/workdir/TaiDoan/Projects/InfoMUNIT_workshop/Data/portrait")
-    self.parser.add_argument('--dataroot', type=str, default="/media/tai/6TB/Projects/SOTAsDemos/DRIT/DRIT/datasets/portrait")
+#     ### test 001_portrait
+#     self.parser.add_argument('--dataroot', type=str, default="/home/jupyter/workdir/TaiDoan/Projects/InfoMUNIT_workshop/Data/portrait")
+#     self.parser.add_argument('--num', type=int, default=100, help='number of outputs per image')
+#     self.parser.add_argument('--name', type=str, default='001_portrait', help='folder name to save outputs')
+#     self.parser.add_argument('--resume', type=str, default='/home/jupyter/workdir/TaiDoan/Projects/InfoMUNIT_workshop/SOTAs/DRIT/results/001_portrait/00399.pth')
+#     self.parser.add_argument('--a2b', type=int, default=0, help='translation direction, 1 for a2b, 0 for b2a')
+
+#     ### test 002_edges2handbags
+#     self.parser.add_argument('--dataroot', type=str, default="/home/blaise/workdir/Tai/Projects/InfoMUNIT_workshop/Data/edges2handbags")
+#     self.parser.add_argument('--num', type=int, default=100, help='number of outputs per image')
+#     self.parser.add_argument('--name', type=str, default='002_edges2handbags', help='folder name to save outputs')
+#     self.parser.add_argument('--resume', type=str, default='/home/blaise/workdir/Tai/Projects/InfoMUNIT_workshop/SOTAs/DRIT/results/002_edges2handbags/01199.pth')
+# #     self.parser.add_argument('--a2b', type=int, default=0, help='translation direction, 1 for a2b, 0 for b2a')
+#     self.parser.add_argument('--a2b', type=int, default=1, help='translation direction, 1 for a2b, 0 for b2a')
+
+#     ### test 003_edges2shoes
+#     self.parser.add_argument('--dataroot', type=str, default="/home/blaise/workdir/Tai/Projects/InfoMUNIT_workshop/Data/edges2shoes")
+#     self.parser.add_argument('--num', type=int, default=100, help='number of outputs per image')
+#     self.parser.add_argument('--name', type=str, default='003_edges2shoes', help='folder name to save outputs')
+#     self.parser.add_argument('--resume', type=str, default='/home/blaise/workdir/Tai/Projects/InfoMUNIT_workshop/SOTAs/DRIT/results/003_edges2shoes/01199.pth')
+# #     self.parser.add_argument('--a2b', type=int, default=0, help='translation direction, 1 for a2b, 0 for b2a')
+#     self.parser.add_argument('--a2b', type=int, default=1, help='translation direction, 1 for a2b, 0 for b2a')
+
+    ### test 004_cat2dogDRIT
+    self.parser.add_argument('--dataroot', type=str, default="/home/blaise/workdir/Tai/Projects/InfoMUNIT_workshop/Data/cat2dog")
     self.parser.add_argument('--num', type=int, default=100, help='number of outputs per image')
     self.parser.add_argument('--name', type=str, default='001_portrait', help='folder name to save outputs')
-    self.parser.add_argument('--resume', type=str, default='../results/001_portrait/00399.pth')
-    self.parser.add_argument('--a2b', type=int, default=1, help='translation direction, 1 for a2b, 0 for b2a')
+    self.parser.add_argument('--resume', type=str, default='/home/jupyter/workdir/TaiDoan/Projects/InfoMUNIT_workshop/SOTAs/DRIT/results/001_portrait/00399.pth')
+    self.parser.add_argument('--a2b', type=int, default=0, help='translation direction, 1 for a2b, 0 for b2a')
 
 
 
