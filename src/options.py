@@ -5,7 +5,7 @@ class TrainOptions():
     self.parser = argparse.ArgumentParser()
 
     # data loader related
-    self.parser.add_argument('--dataroot', type=str, required=True, help='path of data')
+#     self.parser.add_argument('--dataroot', type=str, required=True, help='path of data')
     self.parser.add_argument('--phase', type=str, default='train', help='phase for dataloading')
     self.parser.add_argument('--batch_size', type=int, default=2, help='batch size')
     self.parser.add_argument('--resize_size', type=int, default=256, help='resized image size for training')
@@ -16,12 +16,12 @@ class TrainOptions():
     self.parser.add_argument('--no_flip', action='store_true', help='specified if no flipping')
 
     # ouptput related
-    self.parser.add_argument('--name', type=str, default='trial', help='folder name to save outputs')
+#     self.parser.add_argument('--name', type=str, default='trial', help='folder name to save outputs')
     self.parser.add_argument('--display_dir', type=str, default='../logs', help='path for saving display results')
     self.parser.add_argument('--result_dir', type=str, default='../results', help='path for saving result images and models')
     self.parser.add_argument('--display_freq', type=int, default=1, help='freq (iteration) of display')
-    self.parser.add_argument('--img_save_freq', type=int, default=5, help='freq (epoch) of saving images')
-    self.parser.add_argument('--model_save_freq', type=int, default=10, help='freq (epoch) of saving models')
+#     self.parser.add_argument('--img_save_freq', type=int, default=5, help='freq (epoch) of saving images')
+#     self.parser.add_argument('--model_save_freq', type=int, default=10, help='freq (epoch) of saving models')
     self.parser.add_argument('--no_display_img', action='store_true', help='specified if no dispaly')
 
     # training related
@@ -36,6 +36,15 @@ class TrainOptions():
     self.parser.add_argument('--resume', type=str, default=None, help='specified the dir of saved models for resume the training')
     self.parser.add_argument('--d_iter', type=int, default=3, help='# of iterations for updating content discriminator')
     self.parser.add_argument('--gpu', type=int, default=0, help='gpu')
+
+    ###Tai
+    self.parser.add_argument('--img_save_freq', type=int, default=1, help='freq (epoch) of saving images')
+    self.parser.add_argument('--model_save_freq', type=int, default=5, help='freq (epoch) of saving models')    
+    
+    #### train dog2cat
+    self.parser.add_argument('--dataroot', type=str, help='path of data', default="/home/jupyter/workdir/TaiDoan/Projects/InfoMUNIT_workshop/Data/Dog2CatDRIT/cat2dog")
+    self.parser.add_argument('--name', type=str, default='001_cat2dog', help='folder name to save outputs')
+    
 
   def parse(self):
     self.opt = self.parser.parse_args()
