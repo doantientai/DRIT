@@ -41,9 +41,13 @@ class TrainOptions():
     self.parser.add_argument('--img_save_freq', type=int, default=1, help='freq (epoch) of saving images')
     self.parser.add_argument('--model_save_freq', type=int, default=5, help='freq (epoch) of saving models')    
     
-    #### train dog2cat
-    self.parser.add_argument('--dataroot', type=str, help='path of data', default="/home/jupyter/workdir/TaiDoan/Projects/InfoMUNIT_workshop/Data/Dog2CatDRIT/cat2dog")
-    self.parser.add_argument('--name', type=str, default='001_cat2dog', help='folder name to save outputs')
+#     #### train dog2cat
+#     self.parser.add_argument('--dataroot', type=str, help='path of data', default="/home/jupyter/workdir/TaiDoan/Projects/InfoMUNIT_workshop/Data/Dog2CatDRIT/cat2dog")
+#     self.parser.add_argument('--name', type=str, default='001_cat2dog', help='folder name to save outputs')
+
+    #### train portrait
+    self.parser.add_argument('--dataroot', type=str, help='path of data', default="/home/jupyter/workdir/TaiDoan/Projects/InfoMUNIT_workshop/Data/portrait")
+    self.parser.add_argument('--name', type=str, default='002_portrait', help='folder name to save outputs')
     
 
   def parse(self):
