@@ -85,10 +85,17 @@ class TrainOptions():
 #         self.parser.add_argument('--dataroot', type=str, default="/home/jupyter/workdir/TaiDoan/Projects/InfoMUNIT_workshop/Data/portrait")
 #         self.parser.add_argument('--name', type=str, default='011_portrait', help='folder name to save outputs')
         
-        ### 012_edges2handbags
-        self.parser.add_argument('--dataroot', type=str, default="/home/jupyter/workdir/TaiDoan/Projects/InfoMUNIT_workshop/Data/edges2handbags")
-        self.parser.add_argument('--name', type=str, default='012_edges2handbags', help='folder name to save outputs')
+#         ### 012_edges2handbags
+#         self.parser.add_argument('--dataroot', type=str, default="/home/jupyter/workdir/TaiDoan/Projects/InfoMUNIT_workshop/Data/edges2handbags")
+#         self.parser.add_argument('--name', type=str, default='012_edges2handbags', help='folder name to save outputs')       
         
+#         ### 013_edges2shoes training [on AROBAS]
+#         self.parser.add_argument('--dataroot', type=str, default="/home/blaise/workdir/Tai/Projects/InfoMUNIT_workshop/Data/edges2shoes")
+#         self.parser.add_argument('--name', type=str, default='013_edges2shoes', help='folder name to save outputs')
+
+        ### 014_cat2dogDRIT training
+        self.parser.add_argument('--dataroot', type=str, default="/home/blaise/workdir/Tai/Projects/InfoMUNIT_workshop/Data/cat2dog")
+        self.parser.add_argument('--name', type=str, default='014_cat2dogDRIT', help='folder name to save outputs')
 
 
     def parse(self):
