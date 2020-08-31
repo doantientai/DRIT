@@ -51,9 +51,13 @@ class TrainOptions():
 #     self.parser.add_argument('--dataroot', type=str, default="/home/jupyter/workdir/TaiDoan/Projects/InfoMUNIT_workshop/Data/edges2handbags")
 #     self.parser.add_argument('--name', type=str, default='002_edges2handbags', help='folder name to save outputs')
 
-    ### 002_edges2handbags training [MegaDeep down, redo on Arobas]
-    self.parser.add_argument('--dataroot', type=str, default="/home/blaise/workdir/Tai/Projects/InfoMUNIT_workshop/Data/edges2handbags")
-    self.parser.add_argument('--name', type=str, default='002_edges2handbags', help='folder name to save outputs')
+    # ### 002_edges2handbags training [MegaDeep down, redo on Arobas]
+    # self.parser.add_argument('--dataroot', type=str, default="/home/blaise/workdir/Tai/Projects/InfoMUNIT_workshop/Data/edges2handbags")
+    # self.parser.add_argument('--name', type=str, default='002_edges2handbags', help='folder name to save outputs')
+
+    ### new experiments size 64x64: keep all layers, just use more down-sampling
+    self.parser.add_argument('--dataroot', type=str, default="/media/tai/6TB/Projects/SOTAsDemos/DRIT/DRIT/datasets/portrait")
+    self.parser.add_argument('--name', type=str, default='012_edges2handbags_debug', help='folder name to save outputs')
 
 #     ### 003_edges2shoes training [CANCELED on MegaDeep to run on Arobas]
 #     self.parser.add_argument('--dataroot', type=str, default="/home/jupyter/workdir/TaiDoan/Projects/InfoMUNIT_workshop/Data/edges2shoes")
