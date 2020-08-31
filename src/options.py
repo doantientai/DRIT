@@ -75,10 +75,10 @@ class TrainOptions():
     #     self.parser.add_argument('--dataroot', type=str, default="/home/blaise/workdir/Tai/Projects/InfoMUNIT_workshop/Data/cat2dog")
     #     self.parser.add_argument('--name', type=str, default='004_cat2dogDRIT', help='folder name to save outputs')
 
-    ### new experiments size 64x64: keep all layers, just use more down-sampling
-    self.parser.add_argument('--dataroot', type=str,
-                             default="/media/tai/6TB/Projects/SOTAsDemos/DRIT/DRIT/datasets/portrait")
-    self.parser.add_argument('--name', type=str, default='012_edges2handbags', help='folder name to save outputs')
+        ### new experiments size 64x64: keep all layers, just use more down-sampling
+        self.parser.add_argument('--dataroot', type=str,
+                                 default="/media/tai/6TB/Projects/SOTAsDemos/DRIT/DRIT/datasets/portrait")
+        self.parser.add_argument('--name', type=str, default='012_edges2handbags', help='folder name to save outputs')
 
     def parse(self):
         self.opt = self.parser.parse_args()
